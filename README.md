@@ -5,15 +5,20 @@ My [repository] (https://github.com/jannaee/ninja-ninjtorious.git) is available 
 Please treat my baby well as it is the result of 9 days of sweat, tears and hallucinations from days of no sleep.
 I love your company and most importantly Tony Hsieh's philosophy. I want to work for that guy for life! 
 
-I want to build mobile apps and I strongly need/desire your help. I have great ideas and really need the tools (lessons by an expert developer) to bring them to life.
+I have a huge goal to achieve and that's to build mobile apps. I have great ideas but really need the tools (lessons by an expert developer) to bring this dream to life.
 
 ## Zombie Survival Guide
-Thanks for this one. I've been reading about responsive for a while but it is not in use where I work yet. 
+Thanks for this one. I've been reading about responsive for a while but it is was not used much where I work. 
 I like how 3 simple views add up to a useful site for all.
+
+PS: I've included two image files of my bad-A illustration of me as a zombie. It was going to be the basis of me in the responsive website.
+
+
 
 ### Todo List
   * Create a dynamic form that takes input and provides specific output
   * Integrate with Google's Map of the Dead
+
 
 ## Good Ninja - Sort Thyself
 This was a stretch for me. I've done work on my own to better understand Javascript but it was great to see how JS and CSS can work together
