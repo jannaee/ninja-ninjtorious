@@ -2,36 +2,71 @@
 <html>
 <head>
     <title>Ninja Table</title>
-    <style type="text/css">
-	    body{background-color:black;}
-	    #container{margin: 250px auto;}
-		td{
-			color: rgb(255,255,200);
-			text-align:center;
+    <style>
+		th.ninjaTh_odd {
+			background-color: yellow; 
+			color: #fff; 			/* taken from http://stackoverflow.com/questions/6184589/jquery-text-rotation */
+			-moz-transform: rotate(90deg);                 /*FF*/
+			-o-transform: rotate(90deg);                   /*Opera*/
+			-webkit-transform: rotate(90deg);              /*Safari, Chrome*/
+			-ms-transform: rotate(90deg) !important;       /*IE9*/
+			transform: rotate(90deg);                      /*CSS3 default*/
+			background-color:transparent;
+			zoom: 1;
+    		z-index:1; /*NEEDED FOR IE8*/
 		}
-		#content{
-			float:left;
-			width:1024px;
-		}
-		table {
+		th.ninjaTh_even {
+			background-color: gray; 
 			color: rgb(255,255,255);
-			-webkit-transform:rotate(90deg);
-			-moz-transform:rotate(90deg);
-			-o-transform:rotate(90deg);
-			float:left;
-			font-size:2em;
-			padding: 50px 5px;
-			width: 400px;
-			height:20px;
+			-moz-transform: rotate(90deg);                 /*FF*/
+			-o-transform: rotate(90deg);                   /*Opera*/
+			-webkit-transform: rotate(90deg);              /*Safari, Chrome*/
+			-ms-transform: rotate(90deg) !important;       /*IE9*/
+			transform: rotate(90deg);                      /*CSS3 default*/
+			background-color:transparent;
+			zoom: 1;
+    		z-index:1; /*NEEDED FOR IE8*/
+    		width: 400px;
+    		height: 400px;
+    		text-align:left;
+			padding-left:20px;
+		}
+
+		td.ninjaTd_odd {
+			background-color: yellow; 
+			color: blue; 			/* taken from http://stackoverflow.com/questions/6184589/jquery-text-rotation */
+			-moz-transform: rotate(90deg);                 /*FF*/
+			-o-transform: rotate(90deg);                   /*Opera*/
+			-webkit-transform: rotate(90deg);              /*Safari, Chrome*/
+			-ms-transform: rotate(90deg) !important;       /*IE9*/
+			transform: rotate(90deg);                      /*CSS3 default*/
+			background-color:transparent;
+			zoom: 1;
+    		z-index:1; /*NEEDED FOR IE8*/
+    		border: 1px solid #444;
+    		width:400px;
+    		height:100px;
+			padding-left:20px;
+
 
 		}
-		
-
-	</style>    
-		<!--<link rel="stylesheet" href="css/spine.css" type="text/css"/>-->
+		td.ninjaTd_even {
+			background-color: gray; color: green;
+			-moz-transform: rotate(90deg);                 /*FF*/
+			-o-transform: rotate(90deg);                   /*Opera*/
+			-webkit-transform: rotate(90deg);              /*Safari, Chrome*/
+			-ms-transform: rotate(90deg) !important;       /*IE9*/
+			transform: rotate(90deg);                      /*CSS3 default*/
+			background-color:transparent;
+			zoom: 1;
+    		z-index:1; /*NEEDED FOR IE8*/
+    		border: 1px solid #444;
+    		width:600px;
+    		height:100px;
+    		padding-left:20px;
+		}
+    </style>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <div id="container">
-    
     <script>
 
 		// cals odd or even to help name css classes for row/col styling
@@ -48,58 +83,50 @@
 			return 0;
 		};
 
-		// book data
-		var books = [{
+		// movie data
+		var movies = [{
 		   "ninja_id": "1",
 		   "title": "An American Ninja in London",
-		   "author": "Bruce Lee",
+		   "director": "Bruce Lee",
 		   "gross": "258500"
 		}, {
 		   "ninja_id": "3",
 		   "title": "Ninjitsu 2 - Electric Ninjaloo",
-		   "author": "Sonny Chiba",
+		   "director": "Sonny Chiba",
 		   "gross": "77739203"
 		}, {
 		   "ninja_id": "2",
 		   "title": "Star Man",
-		   "author": "Jet Li",
+		   "director": "Jet Li",
 		   "gross": "34234343434"
 		}];
 
 
-		// sorts and displays books
-        var sort_and_display_books = $(function () {
+		// sorts and displays movies
+        var sort_and_display_movies = $(function () {
 
-        	books.sort(compareTitle); // sort by title
+        	movies.sort(compareTitle); // sort by title
 
             var $wrap = $('<div>').attr('id', 'ninjaDiv'); // create div
 			var $form = $('<form>').attr('id', 'ninjaForm'); // unused form, wanted to do multi-sort with some time
             var $tbl = $('<table>').attr('id', 'ninjaTable'); // table for the data
 
 			// make a header row using the sorted p
-			var $firstRow =  $('<tr>').attr('class', '.ninjaHeaderRow');
-            for (var i = 0; i < books.length; i++) {
+			var $firstRow =  $('<tr>').attr('class', 'ninjaHeaderRow');
+            for (var i = 0; i < movies.length; i++) {
                 $firstRow.append(
-					$('<th>').text(books[i].ninja_id) // one table header per book
-						.attr('id', books[i].ninja_id)
-						.attr('class', '.ninjaTh_'+oddEven(i))
+					$('<th>').text('# ' + movies[i].ninja_id) // one table header per book
+						.attr('class', 'ninjaTh_'+oddEven(i))
                );
             }
 			$tbl.append($firstRow); // add column/header to row
 
 
-			var $titleRow =  $('<tr>').attr('class', '.ninjaTitleRow'); // create column for each book & header above
-            for (var i = 0; i < books.length; i++) {
+			var $titleRow =  $('<tr>').attr('class', 'ninjaTitleRow'); // create column for each book & header above
+            for (var i = 0; i < movies.length; i++) {
 				var $cell = $('<td>')
-					.attr('id', books[i].ninja_id)
-					.attr('class', '.ninjaTd_'+oddEven(i)); // create a row for each book
-
-				// basically doing a hard break for each character, not very graceful
-						// but didnt discover a cross browser method
-				for(var j=0; j< books[i].title.length; j++) {
-					$cell.append(books[i].title.charAt(j)); // write the character
-					$cell.append($('<br>')); // put a hard line break
-				}
+					.text(movies[i].title)
+					.attr('class', 'ninjaTd_'+oddEven(i)); // create a row for each book
 
                 $titleRow.append($cell);
             }
@@ -111,7 +138,7 @@
 
 
 
-    </script></div>
+    </script>
 </head>
 <body>
 </body>
