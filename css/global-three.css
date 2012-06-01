@@ -1,0 +1,127 @@
+﻿/******CSS Guides for Jannaee Sick Survival Guide****/
+
+
+body{
+	background-color: rgb(113, 13, 12);
+	margin:0 auto;
+	padding:0;
+}
+
+
+body p{
+	font-family: 'Crimson Text', serif; 
+	text-align:center; 
+	font-style:italic; 
+	color:rgb(255,255,256); 
+	background-color:rgb(6,40,41);
+	padding:10px 0;
+	margin:0;
+}
+
+
+footer p{
+	font-family: 'Crimson Text', serif; 
+	text-align:center; 
+	font-style:italic; 
+	background-color:rgb(6,40,41);
+	padding:10px 0;
+	margin:0;
+}
+
+
+
+header{padding: 40px 0px; margin: 0; width:100%}
+h1{font-family: 'Fredericka the Great', cursive; text-align:center; color:rgb(255,255,255); font-size:10.9em;  line-height:.025em;}
+h2{font-family: 'Fredericka the Great', cursive; text-align:center; color:rgb(255,255,255); font-size:6.25em; line-height:.025em;}
+h3{font-family: 'Crimson Text', serif; text-align:center;  color:rgb(255,255,255); font-size:2.4em;line-height:.025em;}
+h4{font-family: 'Crimson Text', serif; font-style:italic; text-align:center; color:rgb(255,255,255); font-size:1.5em; line-height:.025em;}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+#content{
+	background-color:rgb(255,255,255);
+	overflow: auto;
+	width: 100%;
+	padding-bottom:10px;
+}
+
+#content h3{font-size:2.4em; color:rgb(6,40,41);}
+#content ul {list-style: none; margin: 0;} 
+#content li {font-size:1.125em;  line-height:2em;} 
+
+.fullWidthColumn {float: left; width: 60%; margin-right:0 5%;}
+.fullWidthColumn li h3 {font-family: 'Crimson Text', serif; color:rgb(6,40,41);text-align:center;} 
+
+.box1{ float: left; width: 30%;}  
+.box1 li h3 {font-family: 'Crimson Text', serif; color:rgb(6,40,41);text-align:center;} 
+
+.box2{ float: left; width: 33%; }  
+.box2 li h3 {font-family: 'Crimson Text', serif; color:rgb(6,40,41);text-align:center;} 
+
+.box3{ float: left; width: 36%; }  
+.box3 li h3 {font-family: 'Crimson Text', serif; color:rgb(6,40,41);text-align:center;} 
+
+
+a{background-color:rgb(255,255,204); opacity: 0.5; color: rgb(6,40,41); padding:0 10px; text-decoration:none;}
+a:hover{background-color:rgb(192,217,4);}
+
+
+/*stacking ninja titles*/
+#ninjaContent{
+	background-color:rgb(255,255,255);
+	width: 100%;
+	height:600px;
+
+}
+
+h5.ninjaBooks{
+	color: rgb(255,255,255);
+	background-color:rgb(105,105,105);
+	-webkit-transform:rotate(90deg);
+	-moz-transform:rotate(90deg);
+	-o-transform:rotate(90deg);
+
+	
+
+
+
+}
+/**This is my first responsive site****Please send comments and suggestions for improvement to jannaee@gmail.com**/
+
+/******Media Queries****/
+
+/*****Media Queries*****/
+@media (max-width: 768px){
+	h1{font-size:7em;  line-height:.025em;}
+	h2{font-size:4em; line-height:.025em;}
+	h3{font-size:2.1875em;line-height:1em; width:auto;}
+	h4{font-size:1.5em; line-height:.025em;}
+
+	#content h3{font-size:2em; color:rgb(6,40,41);}
+	#content ul {list-style: none; margin: 0;} 
+	#content li {font-size:1.125em;  line-height:2em;} 
+	.box1, .box2, .box3{
+		float:none;
+		margin:0 25px 75px 5px;
+		width:90%;
+	}
+	.box3{margin-bottom:70px;}
+	.fullWidthColumn {width: 90%; margin-right:5%;}
+
+	
+	}
+
+	
+
+/******Media Queries for 480****/
+@media (max-width: 480px){
+	h1{font-size:4.25em;  line-height:.025em;}
+	h2{font-size:2.75em; line-height:.025em;}
+	h3{font-size: 1.75em;line-height:1em;}
+	h4{font-size:1.5em; line-height:.65em;}
+}
+
+
